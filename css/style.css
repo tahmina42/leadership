@@ -3,22 +3,42 @@
 body{
     font-family: 'Poppins', sans-serif;
     background-color: #F3F1FF;
+    margin: 0;
+    padding: 0;
 }
-main{
+main {
     display: flex;
-    justify-content: center;
-   
+    flex-direction: column;
+    align-items: center;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #7757ff;
+    padding: 14px 0px;
+}
+nav a {
+    text-decoration: none;
+    margin-right: 14px;
+    color: #fff;
+    
+}
+.active{
+    background-color: #f48cad;
+    padding: 14px;
 }
 .container{
     background-color: #fff;
     width: 870px;
     padding: 30px;
+    margin-top: 21px;;
     
 }
 
 hr{
 
     border: 1px solid #D1D1D1;
+    margin-bottom: 30px;
 }
 
 
@@ -34,6 +54,7 @@ h2.section-title {
 .players{
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    grid-row-gap: 30px;
 }
 .player{
     display: flex;
@@ -52,9 +73,11 @@ h3.player-name {
 .blogs{
     display: grid;
     grid-template-columns: repeat(2,1fr);
+    grid-row-gap: 26px;
 }
 article.blog {
     display: flex;
+    align-items: flex-end;
 }
 .blog-thumbnail img {
     height: 117px;
@@ -69,3 +92,83 @@ font-size: 20px;
 p.blog-author{
     color:#9F9F9F;
 }
+.latest-course {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 24px;
+}
+.course {
+  
+    box-shadow: 2px 3px 10px lightgrey;
+    padding: 18px;
+    border-radius: 10px;
+}
+.course-banner img {
+    width: 224px;
+    height: 104px;
+}
+.course-info {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+h3.course-title {
+    color: #1E1E1E;
+    font-family: roboto;
+    font-size: 20px;
+}
+p.course-author {
+    color: #ED6B4F;
+    margin: 0px auto;
+}
+i.fas.fa-star.filled {
+    color: #FFC014;
+}
+i.fas.fa-star.empty {
+    color: #AEAEAE;
+    opacity: 0.25;
+}
+.course-duration {
+    color: #FF4A60;
+    background-color: #FFE4E8;
+    padding: 6px 8px;
+    border-radius: 50px;
+}
+/*media queries for mobile devices*/
+@media only screen and (max-width: 688px) {
+    .container{
+        width: 100%;
+    }
+    .players{
+    
+        grid-template-columns: repeat(2,1fr);
+     
+    }
+    .player {
+        
+        align-items: center;
+        flex-direction: column;
+    }
+    .blogs, .latest-course {
+        grid-template-columns: repeat(1,1fr);  
+       
+    }
+    .latest-course {
+        grid-row-gap: 10px;
+    }
+
+  }
+
+  /*media queries for tab devices*/
+
+
+  @media only screen and (min-width: 688px) and (max-width: 991px) {
+    .container{
+        width: 100%;
+    }
+    .latest-course {
+        grid-template-columns: repeat(2,1fr);  
+        grid-row-gap:20px ;
+    }
+  }
